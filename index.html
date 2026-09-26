@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiCalc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 p-0 m-0">
+    <header class="bg-white shadow-md flex items-center justify-center gap-2 px-4 py-3 border-b border-slate-200 sticky top-0 z-50" id="header">
+        <img src="https://cdn-icons-png.flaticon.com/128/17959/17959577.png" alt="" id="img1" class="w-12 h-12"> 
+        <p class="text-slate-700 mx-1 px-3 py-2 font-semibold hover:text-blue-600 hover:bg-blue-50 rounded-lg duration-300 cursor-pointer"><a id="a1">Price Calculator</a></p> 
+        <p class="text-slate-700 mx-1 px-3 py-2 font-semibold hover:text-blue-600 hover:bg-blue-50 rounded-lg duration-300 cursor-pointer"><a href="#trk">Track Shipments</a></p> 
+        <p class="text-slate-700 mx-1 px-3 py-2 font-semibold hover:text-blue-600 hover:bg-blue-50 rounded-lg duration-300 cursor-pointer"><a href="#card">Logistics Services</a></p> 
+        <p class="text-slate-700 mx-1 px-3 py-2 font-semibold hover:text-blue-600 hover:bg-blue-50 rounded-lg duration-300 cursor-pointer"><a href="#contact">Contact Us</a></p> 
+    </header> 
+    <div id="hero" class="text-center bg-gradient-to-r from-blue-600 to-indigo-700 m-10 p-8 font-bold rounded-2xl shadow-lg text-white"> 
+        <h3 class="text-2xl mb-3">Fast, Reliable & Transparent Global Shipping Rates</h3> 
+        <span class="text-blue-100 font-medium">Calculate your freight cost, compare shipping methods, and book your shipment in seconds</span> 
+        <button class="block mx-auto my-5 bg-white text-blue-700 rounded-xl shadow-md capitalize font-bold px-5 py-2 cursor-pointer hover:bg-blue-50 duration-300" id="rates">Calculate Rates</button> 
+    </div> 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 px-10"> 
+        <div id="airline" class="bg-white border border-blue-100 rounded-2xl shadow-md p-4 hover:shadow-lg duration-300"> 
+            <span class="block text-center font-bold m-2 text-blue-700 text-lg">Air Freight</span> 
+            <span class="block text-center font-semibold m-2 text-slate-600">Estimated duration: 3–5 days</span> 
+            <span class="block text-center font-semibold m-2 text-slate-800">Price: $12 / kg</span> 
+            <button id="btn1" class="block text-center my-4 mx-auto bg-blue-600 px-4 py-2 rounded-xl text-white font-bold hover:bg-blue-700 duration-300">Choosing this method</button> 
+        </div> 
+        <div id="land" class="bg-white border border-blue-100 rounded-2xl shadow-md p-4 hover:shadow-lg duration-300"> 
+            <span class="block text-center font-bold m-2 text-blue-700 text-lg">Land Transport</span> 
+            <span class="block text-center font-semibold m-2 text-slate-600">Estimated duration: 5–10 days</span> 
+            <span class="block text-center font-semibold m-2 text-slate-800">Price: $6 / kg</span> 
+            <button id="btn2" class="block text-center my-4 mx-auto bg-blue-600 px-4 py-2 rounded-xl text-white font-bold hover:bg-blue-700 duration-300">Choosing this method</button> 
+        </div> 
+        <div id="sea" class="bg-white border border-blue-100 rounded-2xl shadow-md p-4 hover:shadow-lg duration-300"> 
+            <span class="block text-center font-bold m-2 text-blue-700 text-lg">Sea Freight</span> 
+            <span class="block text-center font-semibold m-2 text-slate-600">Estimated duration: 20–30 days</span> 
+            <span class="block text-center font-semibold m-2 text-slate-800">Price: $4 / kg</span> 
+            <button id="btn3" class="block text-center my-4 mx-auto bg-blue-600 px-4 py-2 rounded-xl text-white font-bold hover:bg-blue-700 duration-300">Choosing this method</button> 
+        </div> 
+    </div> 
+    <div class="hidden max-w-md mx-auto my-10 p-6 bg-white rounded-2xl shadow-lg border border-slate-200" id="inputs"> 
+        <input type="number" id="inp1" placeholder="Actual Weight (e.g. 5.5 kg)" class="block mx-auto my-3 w-full bg-slate-50 border border-slate-200 font-semibold text-slate-700 placeholder:text-slate-400 placeholder:font-normal p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 duration-200"> 
+        <input type="number" id="inp2" placeholder="Length (e.g. 30 cm)" class="block mx-auto my-3 w-full bg-slate-50 border border-slate-200 font-semibold text-slate-700 placeholder:text-slate-400 placeholder:font-normal p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 duration-200"> 
+        <input type="number" id="inp3" placeholder="Width (e.g. 20 cm)" class="block mx-auto my-3 w-full bg-slate-50 border border-slate-200 font-semibold text-slate-700 placeholder:text-slate-400 placeholder:font-normal p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 duration-200"> 
+        <input type="number" id="inp4" placeholder="Height (e.g. 15 cm)" class="block mx-auto my-3 w-full bg-slate-50 border border-slate-200 font-semibold text-slate-700 placeholder:text-slate-400 placeholder:font-normal p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 duration-200"> 
+        <button id="btn4" type="button" class="block mx-auto mt-5 bg-blue-600 px-5 py-3 rounded-xl text-white font-bold w-full hover:bg-blue-700 hover:shadow-md duration-300">Calculate Cost</button> 
+        <h3 id="h3" class="text-center text-slate-700 font-bold mt-4"></h3> 
+        <span id="span1" class="block mx-auto my-2 text-center font-bold text-xl text-blue-700"></span> 
+        <span id="span2" class="block mx-auto my-2 text-center font-bold text-xl text-blue-700"></span> 
+        <button id="main" class="hidden mx-auto mt-5 bg-slate-700 px-5 py-3 rounded-xl text-white font-bold w-full hover:bg-slate-800 hover:shadow-md duration-300">Return to main menu</button> 
+    </div>     
+    <div id="trk" class="max-w-md mx-auto my-10 p-6 bg-white rounded-2xl shadow-lg border border-slate-200"> 
+        <input type="number" id="inp5" placeholder="Enter the shipment name for tracking" class="block mx-auto my-3 w-full bg-slate-50 border border-slate-200 font-semibold text-slate-700 placeholder:text-slate-400 placeholder:font-normal p-3 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 duration-200"> 
+        <button id="track" class="block mx-auto mt-5 bg-slate-700 px-5 py-3 rounded-xl text-white font-bold w-full hover:bg-slate-800 hover:shadow-md duration-300">Track</button> 
+        <span id="span3" class="block mx-auto my-2 text-center font-bold text-blue-700">Enter the shipment number (example): TRK-98234</span> 
+        <span id="span4" class="block mx-auto my-2 text-center font-bold text-blue-700"></span> 
+    </div> 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 px-10" id="card"> 
+        <div id="CustomsClearance" class="bg-white border border-blue-100 rounded-2xl shadow-md p-4 hover:shadow-lg duration-300 font-bold text-center"> 
+            <h3 class="text-center font-bold m-2 text-blue-700 text-lg">Customs Clearance</h3> 
+            <p>Fast and hassle-free international border handling with complete documentation, duty compliance, and zero delays</p> 
+        </div> 
+        <div id="CargoInsurance" class="bg-white border border-blue-100 rounded-2xl shadow-md p-4 hover:shadow-lg duration-300 font-bold text-center"> 
+            <h3 class="text-center font-bold m-2 text-blue-700 text-lg">Cargo Insurance</h3> 
+            <p>Full protection for your high-value shipments against damage, loss, or theft during global transit</p> 
+        </div> 
+        <div id="WarehousingStorage" class="bg-white border border-blue-100 rounded-2xl shadow-md p-4 hover:shadow-lg duration-300 font-bold text-center"> 
+            <h3 class="text-center font-bold m-2 text-blue-700 text-lg">Warehousing Storage</h3> 
+            <p>Secure, climate-controlled storage solutions with automated inventory tracking and smart fulfillment options</p> 
+        </div> 
+    </div> 
+    <div id="contact" class="bg-white border border-blue-200 rounded-2xl shadow-md font-bold my-4 mx-auto text-center w-fit max-w-full px-4 py-3 text-slate-700"> 
+        <span class="block text-sm">Phone: +1 (800) 555-0199</span> 
+        <span class="block text-sm">Email: support@opx-logistics.com</span> 
+        <span class="block text-sm">Working Hours: Mon - Fri: 8:00 AM - 6:00 PM</span> 
+    </div> 
+    <div class="bg-slate-900 text-slate-300 text-center font-semibold py-3 px-4 border-t border-slate-700" id="end"> 
+        <h2 class="text-sm tracking-wide">All rights reserved to Tamar Haitham</h2> 
+    </div> 
+    <script src="main.js"></script> 
+</body> 
+</html> 
